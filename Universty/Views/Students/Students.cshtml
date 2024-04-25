@@ -1,0 +1,35 @@
+﻿@model List<Vize.Models.Students>
+@{
+                /**/
+
+                ViewBag.Title = "Students";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Student Faculty</th>
+            <th>School No</th>
+            <th>Credit</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+        <tr>
+            <td>@student.id</td>
+            <td>@student.StudentName</td>
+            <td>@student.Faculty</td>
+            <td>@student.SchoolNo</td>
+            <td>@student.Credit</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = student.id }, new { @class = "btn btn-danger" })</td>
+            <td>@Html.ActionLink("Edit", "EditStudent", new { id = student.id }, new { @class = "btn btn-success" })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("NewStudent", "NewStudent", null, new { @class = "btn btn-primary" })

@@ -1,0 +1,25 @@
+﻿﻿@model Vize.Models.Students
+
+@{
+    ViewBag.Title = "EditStudent";
+}
+
+<h2>EditStudent</h2>
+
+@using (Html.BeginForm("EditStudent", "Students", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.id)
+    @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.StudentName)
+    @Html.TextBoxFor(m => m.StudentName, new { @class = "form-control" })
+    @Html.LabelFor(m => m.Faculty)
+    @Html.TextBoxFor(m => m.Faculty, new { @class = "form-control" })
+    @Html.LabelFor(m => m.SchoolNo)
+    @Html.TextBoxFor(m => m.SchoolNo, new { @class = "form-control" })
+</div>
+    <div>
+        <button class="btn btn-warning">Edit Student</button>
+    </div>
+}

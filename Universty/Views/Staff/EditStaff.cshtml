@@ -1,0 +1,26 @@
+﻿﻿@model Vize.Models.Staff
+
+@{
+    ViewBag.Title = "EditStaff";
+}
+
+<h2>EditStaff</h2>
+
+
+@using (Html.BeginForm("EditStaff", "Staff", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.id)
+        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+
+        @Html.LabelFor(m => m.StaffName)
+        @Html.TextBoxFor(m => m.StaffName, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Starting)
+        @Html.TextBoxFor(m => m.Starting, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Ending)
+        @Html.TextBoxFor(m => m.Ending, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Edit Staff</button>
+    </div>
+}
